@@ -11,10 +11,11 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: hamo066
+          username: oryades
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           push: true
           tags: oryades/aca_devops_prof:latest
+      - run: exit 1
