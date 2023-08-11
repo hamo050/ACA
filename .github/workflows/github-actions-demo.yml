@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: ssh connect to server
         uses: webfactory/ssh-agent@v0.3.0
-          with:
-            ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 #      - run: mkdir -p ~/.ssh && echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 #        shell: bash
 #        env:
