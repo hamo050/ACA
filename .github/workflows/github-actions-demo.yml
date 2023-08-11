@@ -12,17 +12,17 @@ jobs:
       - run: cat ~/.ssh/id_rsa
       - run: ssh -o StrictHostKeyChecking=no ubuntu@3.121.113.83
 
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: hamo066
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: hamo066/github_workflow:latest
+#      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+#      - name: Check out repository code
+#        uses: actions/checkout@v3
+#      - name: Log in to Docker Hub
+#        uses: docker/login-action@v2
+#        with:
+#          username: hamo066
+#          password: ${{ secrets.DOCKERHUB_TOKEN }}
+#      - name: Build and push Docker image
+#        uses: docker/build-push-action@v4
+#        with:
+#          push: true
+#          tags: hamo066/github_workflow:latest
 
