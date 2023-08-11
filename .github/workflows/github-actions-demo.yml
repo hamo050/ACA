@@ -11,7 +11,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
       - run: cat ~/.ssh/id_rsa
       - run: ssh  -o "StrictHostKeyChecking no"  ubuntu@3.121.113.83
-
 #      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 #      - name: Check out repository code
 #        uses: actions/checkout@v3
