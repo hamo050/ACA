@@ -18,7 +18,7 @@ jobs:
       with:
         push: true
         tags: hamo066/website:latest  
-    - name: executing remote ssh commands using ssh key
+    - name: executing remote ssh commands
       uses: appleboy/ssh-action@master
       with:
         host: 3.121.113.83
