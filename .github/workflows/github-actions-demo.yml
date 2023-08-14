@@ -18,14 +18,21 @@ jobs:
       with:
         push: true
         tags: hamo066/website:latest  
-    - name: executing remote ssh commands
+    - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
       with:
-        host: i-0a1ec41c48f18d1e5
+        host: 3.121.113.83
         username: ubuntu
-        kmeey: ${{secrets.SSH_PRIVATE_KEY}}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: docker rm -fv website && docker pull hamo066/website  && docker run -d --name website -p 80:80 hamo066/website 
+#    - name: executing remote ssh commands
+#      uses: appleboy/ssh-action@master
+#      with:
+#        host: i-0a1ec41c48f18d1e5
+#        username: ubuntu
+#        kmeey: ${{secrets.SSH_PRIVATE_KEY}}
+#        port: 22
+#        script: docker rm -fv website && docker pull hamo066/website  && docker run -d --name website -p 80:80 hamo066/website 
 
 #    steps:
 #      - run: mkdir -p ~/.ssh && echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
