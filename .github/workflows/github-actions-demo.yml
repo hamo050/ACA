@@ -25,6 +25,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
+        script: docker rm -fv website && docker pull hamo066/website  && docker run -d --name website -p 80:80 hamo066/website
 #    - name: executing remote ssh commands
 #      uses: appleboy/ssh-action@master
 #      with:
