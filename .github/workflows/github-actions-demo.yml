@@ -13,10 +13,10 @@ jobs:
       - name: Configure SSH
         run: |
           cat >>~/.ssh/config <<END
-          Host staging
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/staging.key
+          Host *
+            HostName test_server
+            User ubuntu
+            IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
           END
 
