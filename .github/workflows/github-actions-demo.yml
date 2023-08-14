@@ -25,7 +25,7 @@ jobs:
         username: ubuntu
         kmeey: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: docker rm -fv website && docker pull hamo066/website  && docker run -d --name website -p 80:80 hamo066/website
+        script: docker rm -fv website 
 
 #    steps:
 #      - run: mkdir -p ~/.ssh && echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
