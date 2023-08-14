@@ -25,7 +25,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script:  myscript.sh
+        script: docker rm -fv website && docker pull oryades/aca_devops_prof && docker run -d -p 80:80 oryades/aca_devops_prof
 
 
 #    steps:
