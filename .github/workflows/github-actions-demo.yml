@@ -10,13 +10,16 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
       - run: cat ~/.ssh/id_rsa 
-      - run: cat <<EOF> ~/.ssh/config
-             Host test_server
-               HostName test_server
-               User ubuntu
-               IdentityFile ~/.ssh/id_rsa
-               StrictHostKeyChecking no
-             EOF
+      - name: Configure SSH
+        run: |
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+
       - run: ssh  -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@3.121.113.83 
 #      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
 #      - name: Check out repository code
