@@ -8,7 +8,7 @@ jobs:
       - name: Run a command remotely
         uses: docker://evaneos/ssh-action:0.1.0
         with:
-          hosts: 3.121.113.83
+          hosts: i-0a1ec41c48f18d1e5
           user: ubuntu
           private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
