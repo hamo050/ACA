@@ -14,7 +14,7 @@ jobs:
         run: |
           cat >>~/.ssh/config <<END
           Host *
-            HostName test_server
+            HostName 3.121.113.83
             User ubuntu
             IdentityFile ~/.ssh/id_rsa
             StrictHostKeyChecking no
